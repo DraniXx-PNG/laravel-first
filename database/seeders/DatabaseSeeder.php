@@ -7,7 +7,7 @@ namespace Database\Seeders;
 
 use App\Models\Classroom;
 use App\Models\Guardian;
-use App\Models\Student;
+use App\Models\Subject;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +22,12 @@ class DatabaseSeeder extends Seeder
     Guardian::factory(10)->create();
     //   Student::factory(10)->create();
     //   Classroom::factory(3)->create();
-    Classroom::factory(4)->hasStudent(5)->create();
+    Classroom::factory(4)
+    ->hasStudent(5)
+    ->create();
+    Subject::factory(5)
+    ->hasTeacher(1)
+    ->create();
     
     }
 }
